@@ -1,0 +1,6 @@
+version: '3'
+services:
+  mongo:
+    image: andrew0010/mongodistri:1.0
+    ports:
+      - "27018:27017"

@@ -1,0 +1,110 @@
+﻿body {
+    background-color: #0d1117;
+}
+.navbar {
+    background-color: #161b22;
+    
+}
+
+.datos{
+    display:flex;
+    flex-direction:column;
+}
+span{
+    font-weight: bold;
+}
+nav .nav-link{
+    color: #ffffff;
+    transition: .5s ease;
+}
+nav .nav-link:hover{
+    transform:scale(1.5);
+    font-weight: bold;
+}
+.register{
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.registro {
+    margin-bottom: 20px;
+    padding: 20px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.register a {
+    text-decoration: none;
+    transition: .5s ease;
+    
+}
+.register a:hover{
+    transform:scale(1.1);
+
+}
+section {
+    margin-top: 33px;
+    display: flex;
+    width: 100%;
+    height: 430px;
+}
+section a {
+    width: 0px;
+    flex-grow: 1;
+    display: block;
+    transition: .5s ease;
+    text-decoration: none;
+    font-size: 50px;
+}
+.nombre{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
+.nombre h1{
+    padding-left: 20px;
+    z-index: 1;
+    position: absolute;
+    opacity: .8;
+    color: #ffffff;
+    
+
+}
+.nombre h1:nth-child(1){
+    color: transparent;
+    font-weight: bold;
+    -webkit-text-stroke: 2px #ffffff;
+}
+.nombre h1:nth-child(2){
+    color: #ffffff;
+    font-weight: bold;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{
+    0%,100%{
+        clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%,
+        70% 61%,84% 59%, 100% 52%,100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%,84% 45%, 100% 46%,100% 100%, 0% 100%);
+    }
+}
+
+section img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.8;
+   
+}
+section a:hover {
+    cursor: pointer;
+    width: 300px;
+    z-index: 2;
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 1px 1px 2px #8c8c94, 0 0 5px #8c8c94, 0 0 15px #8c8c94;
+    filter: contrast(120%)
+}

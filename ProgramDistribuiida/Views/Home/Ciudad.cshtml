@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ProgramDistribuiida.Models.Water>
+@{
+}
+<div class="m-4 text-white-50">
+    <h1>Water</h1>
+</div>
+<div class="register">
+    @foreach (var item in Model)
+    {
+        <a asp-area="" asp-action="Registro" asp-controller="Home" asp-route-id="@item.id">
+            @if(item.Potability == 0)
+            {
+                <div class="bg-danger registro" >
+                    <h4>@item.Ciudad</h4>
+                    <p>Estado: No Potable</p>
+                    <p>Fecha: @item.date</p>
+                </div>
+            }
+            else{
+                <div class="bg-success registro" >
+                    <h4>@item.Ciudad</h4>
+                    <p>Estado: Potable</p>
+                    <p>Fecha: @item.date</p>
+                </div>
+            }
+        </a>
+    }
+</div>

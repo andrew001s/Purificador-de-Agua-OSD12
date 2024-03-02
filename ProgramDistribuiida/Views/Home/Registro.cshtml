@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ProgramDistribuiida.Models.Water>
+@{
+}
+<script src="~/js/Registro.js"></script>
+<link rel="stylesheet" href="~/css/Registro.css" />
+<link rel="stylesheet" href="~/css/Burbujas.css" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/js/sweetalert.js"></script>
+<div id="containerbuble" class="container1">
+    <div class="particles">
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:25;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:26;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:28;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:25;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:26;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:28;"></span>
+    </div>
+</div>
+<div class="m-4 datos">
+    
+    @foreach (var item in Model)
+    {
+        <p><span>Ciudad:</span> @item.Ciudad</p>
+        <p><span>Fecha:</span> @item.date</p>
+        <p><span>Turbiedad:</span> @item.Turbidity</p>
+        <p><span>Ph:</span> @item.ph</p>
+        <p><span>Dureza:</span> @item.Hardness</p>
+        <p><span>Solidos:</span> @item.Solids</p>
+        <p><span>Sulfato:</span> @item.Sulfate</p>
+        
+
+        if (item.Potability == 1)
+        {
+            <p><span>Estado:</span> Potable</p>
+            <div class="ocean">
+                <div class="waveclean"></div>
+                <div class="waveclean"></div>
+            </div>
+
+        }
+        else
+        {
+           
+            <p><span>Estado:</span> No Potable</p>
+            <form id="form" asp-action="Update" asp-controller="Home" method="post" onsubmit="updateregistro(event)">
+                <input type="hidden" name="id" value="@item.id" />
+                <input type="hidden" name="Ciudad" value="@item.Ciudad" />
+                <input type="hidden" name="potabilidad" value="1" />
+                <input type="hidden" name="date" value="@item.date" />
+                <input type="hidden" name="Turbidity" value="@item.Turbidity" />
+                <input type="hidden" name="ph" value="@item.ph" />
+                <input type="hidden" name="Hardness" value="@item.Hardness" />
+                <input type="hidden" name="Solids" value="@item.Solids" />
+                <input type="hidden" name="Sulfate" value="@item.Sulfate" />
+                <button class="btn btn-info " type="submit">Potabilizar</button>
+            </form>
+ 
+            <div id="oceandirtid" class="oceandirt">
+                <div id="wave1" class="wavedirt"></div>
+                <div id="wave2" class="wavedirt"></div>
+            </div>
+        }
+
+    }
+</div>
